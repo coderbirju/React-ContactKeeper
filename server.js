@@ -7,6 +7,13 @@ connectDB();
 
 const app = express();
 
+
+app.get('/', (req,res)=> {res.send('hello world')})
+
+// init Middlewar
+app.use(express.json({extended : true}));
+
+
 app.get('/', (req,res)=> {res.send('hello world')});
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
